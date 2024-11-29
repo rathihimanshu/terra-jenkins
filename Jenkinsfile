@@ -26,9 +26,6 @@ pipeline {
             }
         }        
         stage('Apply') {
-            when {
-                branch 'main'
-            }
             steps {
                 sh '''
                 terraform apply --auto-approve
