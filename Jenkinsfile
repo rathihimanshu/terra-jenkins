@@ -13,12 +13,16 @@ pipeline {
         }
         stage('Init') {
             steps {
+                sh '''
                 terraform init
+                '''
             }
         }
         stage('plan') {
             steps {
+                sh '''
                 terraform plan
+                '''
             }
         }        
         stage('Apply') {
@@ -26,7 +30,9 @@ pipeline {
                 branch 'main'
             }
             steps {
+                sh '''
                 terraform apply --auto-approve
+                '''
             }
         }
     }
