@@ -1,4 +1,4 @@
-run {
+run "ec2sizecheck" {
     command = plan
 
     assert {
