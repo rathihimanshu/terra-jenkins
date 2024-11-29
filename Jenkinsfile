@@ -24,7 +24,14 @@ pipeline {
                 terraform plan
                 '''
             }
-        }        
+        } 
+        stage('test') {
+            steps {
+                sh '''
+                terraform test
+                '''
+            }
+        }          
         stage('Apply') {
             steps {
                 sh '''
